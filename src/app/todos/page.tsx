@@ -13,6 +13,8 @@ const TodosPage = async () => {
     redirect("/signin");
   }
 
+  console.log("run...");
+
   const { data } = await supabase
     .from("todos")
     .select("*")

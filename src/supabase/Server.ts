@@ -2,8 +2,8 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { Database } from "../../types/supabase-generated";
 
-const createSupabaseServer = () =>
-  createServerClient<Database>(
+const createSupabaseServer = () => {
+  return createServerClient<Database>(
     process.env.PROJECT_URL!,
     process.env.PROJECT_API_KEY!,
     {
@@ -14,5 +14,5 @@ const createSupabaseServer = () =>
       },
     }
   );
-
+};
 export default createSupabaseServer;
